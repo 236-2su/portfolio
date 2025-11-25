@@ -1,5 +1,5 @@
 {
-    "name": "portfolio-site",
+    "name": "portfolio",
     "compatibility_date": "2025-11-25",
     "assets": {
         "directory": "./dist"
