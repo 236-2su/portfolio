@@ -29,7 +29,7 @@ export default function Introduction() {
     {
       title: 'SSAFY 우수 프로젝트',
       organization: 'SSAFY',
-      date: '2024.08',
+      date: '2025',
       description: 'Stalk - 실시간 화상 투자 상담 플랫폼 개발',
       project: 'Stalk',
     },
