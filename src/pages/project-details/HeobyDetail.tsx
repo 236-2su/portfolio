@@ -83,7 +83,7 @@ export default function HeobyDetail() {
                                 <FileText size={24} />
                             </a>
                             <a
-                                href="https://github.com/yourusername/heoby"
+                                href="https://lab.ssafy.com/s13-final/S13P31E106"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
