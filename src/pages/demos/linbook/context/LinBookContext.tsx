@@ -18,6 +18,7 @@ interface Club {
     category: string;
     memberCount: number;
     balance: number;
+    description?: string;
 }
 
 interface LinBookContextType {
@@ -36,9 +37,9 @@ interface LinBookContextType {
 const LinBookContext = createContext<LinBookContextType | undefined>(undefined);
 
 const MOCK_CLUBS: Club[] = [
-    { id: 1, name: '코딩 동아리', category: '학술', memberCount: 25, balance: 1500000 },
-    { id: 2, name: '축구 동아리', category: '체육', memberCount: 30, balance: 800000 },
-    { id: 3, name: '봉사 동아리', category: '봉사', memberCount: 15, balance: 500000 },
+    { id: 1, name: '코딩 동아리', category: '학술', memberCount: 25, balance: 1500000, description: '함께 성장하는 개발자들의 모임입니다. 다양한 프로젝트와 스터디를 진행하고 있습니다.' },
+    { id: 2, name: '축구 동아리', category: '체육', memberCount: 30, balance: 800000, description: '열정적인 축구 동아리입니다. 매주 정기 훈련과 친선 경기를 진행합니다.' },
+    { id: 3, name: '봉사 동아리', category: '봉사', memberCount: 15, balance: 500000, description: '지역 사회를 위한 봉사 활동을 하는 동아리입니다. 따뜻한 마음으로 함께합니다.' },
 ];
 
 const MOCK_TRANSACTIONS: Transaction[] = [

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStalk } from '../context/StalkContext';
 import { Check, X, AlertTriangle } from 'lucide-react';
@@ -86,8 +86,8 @@ const Admin = () => {
                                                 <div>
                                                     <div className="flex items-center gap-2 mb-2">
                                                         <span className={`px-2 py-1 rounded text-xs font-bold ${req.status === 'pending' ? 'bg-yellow-100 text-yellow-700' :
-                                                                req.status === 'approved' ? 'bg-green-100 text-green-700' :
-                                                                    'bg-red-100 text-red-700'
+                                                            req.status === 'approved' ? 'bg-green-100 text-green-700' :
+                                                                'bg-red-100 text-red-700'
                                                             }`}>
                                                             {req.status === 'pending' ? '승인 대기' :
                                                                 req.status === 'approved' ? '승인됨' : '거절됨'}

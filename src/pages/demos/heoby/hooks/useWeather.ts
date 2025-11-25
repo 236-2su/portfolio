@@ -1,4 +1,4 @@
-export function useWeather(uuid: string | null) {
+export function useWeather() {
     const now = new Date();
     const forecast = Array.from({ length: 24 }, (_, i) => {
         const time = new Date(now);

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useStalk } from '../context/StalkContext';
-import { Search, TrendingUp, TrendingDown, DollarSign, BarChart2 } from 'lucide-react';
+import { Search, TrendingUp, TrendingDown, BarChart2 } from 'lucide-react';
 
 const Products = () => {
     const { stocks } = useStalk();
@@ -64,8 +64,8 @@ const Products = () => {
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id as any)}
                                     className={`flex-1 py-4 text-sm font-bold transition-colors ${activeTab === tab.id
-                                            ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50/50'
-                                            : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                                        ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50/50'
+                                        : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
                                         }`}
                                 >
                                     {tab.label}

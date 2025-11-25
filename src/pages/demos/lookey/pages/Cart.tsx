@@ -1,6 +1,6 @@
 import { useLookey } from '../context/LookeyContext';
 import MobileFrame from '../../../../components/MobileFrame';
-import { ShoppingCart, Trash2, Plus, Minus } from 'lucide-react';
+import { ShoppingCart, Trash2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Cart() {
