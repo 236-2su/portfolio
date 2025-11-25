@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="url(#gradient)" />
+
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle for Chart -->
+  <circle cx="100" cy="90" r="55" fill="white" opacity="0.15"/>
+
+  <!-- Upward Chart Line -->
+  <path d="M 50 110 L 70 95 L 90 85 L 110 70 L 130 55 L 150 45"
+        stroke="white"
+        stroke-width="5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+        opacity="0.9"/>
+
+  <!-- Chart Area Fill -->
+  <path d="M 50 110 L 70 95 L 90 85 L 110 70 L 130 55 L 150 45 L 150 130 L 50 130 Z"
+        fill="white"
+        opacity="0.2"/>
+
+  <!-- Chart Points -->
+  <circle cx="50" cy="110" r="4" fill="white"/>
+  <circle cx="70" cy="95" r="4" fill="white"/>
+  <circle cx="90" cy="85" r="4" fill="white"/>
+  <circle cx="110" cy="70" r="5" fill="white"/>
+  <circle cx="130" cy="55" r="5" fill="white"/>
+  <circle cx="150" cy="45" r="6" fill="white"/>
+
+  <!-- Dollar Sign $ -->
+  <g transform="translate(82, 135)">
+    <path d="M 18 5 L 12 5 C 7 5 4 8 4 12 C 4 16 7 19 12 19 L 24 19 C 29 19 32 22 32 26 C 32 30 29 33 24 33 L 12 33"
+          stroke="white"
+          stroke-width="5"
+          stroke-linecap="round"
+          fill="none"
+          opacity="0.95"/>
+    <line x1="18" y1="0" x2="18" y2="38" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.95"/>
+  </g>
+</svg>
