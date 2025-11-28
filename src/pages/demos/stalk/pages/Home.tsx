@@ -53,7 +53,7 @@ const Home = () => {
                         muted
                         playsInline
                     >
-                        <source src="/videos/stalk-background-video.mp4" type="video/mp4" />
+                        <source src="/videos/stalk-bg.mp4" type="video/mp4" />
                     </video>
                     <div className="absolute inset-0 bg-black/40" />
                 </div>
