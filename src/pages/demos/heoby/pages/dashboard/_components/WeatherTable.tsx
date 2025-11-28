@@ -11,7 +11,7 @@ import type { ReactNode } from "react";
 
 export function WeatherTable() {
     const selectedHeoby = useHeobyStore((state) => state.selectedHeoby);
-    const { data, isLoading, error } = useWeather();
+    const { data, isLoading, error } = useWeather(selectedHeoby?.uuid ?? null);
 
     const filteredData =
         data?.weather_forecast

@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useStalk } from '../context/StalkContext';
-import { Star, ChevronLeft, Calendar, Award } from 'lucide-react';
+import { Star, ChevronLeft, Calendar, Clock, CheckCircle, Award } from 'lucide-react';
 
 const AdvisorDetail = () => {
     const { id } = useParams();
@@ -182,8 +182,8 @@ const AdvisorDetail = () => {
                                             key={idx}
                                             onClick={() => setSelectedDate(d.fullDate)}
                                             className={`flex flex-col items-center p-2 rounded-lg border transition-all ${selectedDate === d.fullDate
-                                                ? 'border-blue-600 bg-blue-50 text-blue-700'
-                                                : 'border-gray-200 hover:border-blue-300 hover:bg-gray-50'
+                                                    ? 'border-blue-600 bg-blue-50 text-blue-700'
+                                                    : 'border-gray-200 hover:border-blue-300 hover:bg-gray-50'
                                                 }`}
                                         >
                                             <span className="text-xs text-gray-500 mb-1">{d.day}</span>
@@ -202,8 +202,8 @@ const AdvisorDetail = () => {
                                             key={time}
                                             onClick={() => setSelectedTime(time)}
                                             className={`py-2 rounded-lg text-sm font-medium border transition-all ${selectedTime === time
-                                                ? 'border-blue-600 bg-blue-600 text-white'
-                                                : 'border-gray-200 text-gray-700 hover:border-blue-300 hover:bg-gray-50'
+                                                    ? 'border-blue-600 bg-blue-600 text-white'
+                                                    : 'border-gray-200 text-gray-700 hover:border-blue-300 hover:bg-gray-50'
                                                 }`}
                                         >
                                             {time}

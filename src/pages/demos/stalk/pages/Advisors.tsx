@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStalk } from '../context/StalkContext';
-import { Star, Plus } from 'lucide-react';
+import { Search, Star, Plus } from 'lucide-react';
 
 const Advisors = () => {
     const navigate = useNavigate();
     const { experts, userRole, isLoggedIn } = useStalk();
 
+    const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
     const [sortBy, setSortBy] = useState('recent');
 
@@ -28,6 +29,9 @@ const Advisors = () => {
     };
 
     const filteredExperts = experts.filter(expert => {
+        const matchesSearch = expert.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            expert.shortIntro.toLowerCase().includes(searchTerm.toLowerCase());
+
         let matchesCategory = true;
         if (selectedCategories.length > 0) {
             // Check if expert matches ANY of the selected categories (tags or style)
@@ -46,7 +50,7 @@ const Advisors = () => {
             );
         }
 
-        return matchesCategory;
+        return matchesSearch && matchesCategory;
     });
 
     const sortedExperts = [...filteredExperts].sort((a, b) => {
@@ -80,8 +84,8 @@ const Advisors = () => {
                                         key={cat}
                                         onClick={() => handleCategoryClick(cat)}
                                         className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${(cat === "전체" && selectedCategories.length === 0) || selectedCategories.includes(cat)
-                                            ? "bg-blue-600 text-white"
-                                            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                                                ? "bg-blue-600 text-white"
+                                                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                                             }`}
                                     >
                                         {cat}

@@ -20,7 +20,6 @@ interface HeobyContextType {
     isMonitoring: boolean;
     login: (role: UserRole, platform: Platform) => void;
     logout: () => void;
-    selectPlatform: (platform: Platform) => void;
     toggleMonitoring: () => void;
 }
 
@@ -53,10 +52,6 @@ export function HeobyProvider({ children }: { children: ReactNode }) {
         setIsMonitoring(false);
     };
 
-    const selectPlatform = (selectedPlatform: Platform) => {
-        setPlatform(selectedPlatform);
-    };
-
     const toggleMonitoring = () => {
         setIsMonitoring(!isMonitoring);
     };
@@ -71,7 +66,6 @@ export function HeobyProvider({ children }: { children: ReactNode }) {
                 isMonitoring,
                 login,
                 logout,
-                selectPlatform,
                 toggleMonitoring,
             }}
         >

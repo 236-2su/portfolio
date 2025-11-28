@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { type ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 interface MobileFrameProps {
   children: ReactNode;

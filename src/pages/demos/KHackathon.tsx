@@ -1,7 +1,7 @@
 import DemoLayout from '../../components/DemoLayout';
 import MobileFrame from '../../components/MobileFrame';
 import { motion } from 'framer-motion';
-import { Users, Map, HeartHandshake, User, Shield, MapPin, Trophy, MessageSquare } from 'lucide-react';
+import { Rocket, Users, Map, HeartHandshake, User, Shield, MapPin, Star, Trophy, MessageSquare } from 'lucide-react';
 import khLogo from '../../assets/logos/k-hackathon.png';
 import ProjectLogin, { type Role } from '../../components/ProjectLogin';
 import { useState } from 'react';

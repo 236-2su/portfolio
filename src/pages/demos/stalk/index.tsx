@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { StalkProvider } from './context/StalkContext';
 import Navbar from './components/Navbar';

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStalk } from '../context/StalkContext';
 import { ChevronLeft, Camera, Plus, Trash2 } from 'lucide-react';
@@ -120,8 +120,8 @@ const AdvisorEdit = () => {
                                         key={style}
                                         onClick={() => setFormData({ ...formData, preferredStyle: style })}
                                         className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${formData.preferredStyle === style
-                                            ? 'bg-blue-600 text-white'
-                                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                                ? 'bg-blue-600 text-white'
+                                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                                             }`}
                                     >
                                         {style}
@@ -154,7 +154,7 @@ const AdvisorEdit = () => {
                             </div>
 
                             <div className="space-y-4">
-                                {careers.map((career) => (
+                                {careers.map((career, index) => (
                                     <div key={career.id} className="bg-gray-50 p-4 rounded-xl border border-gray-200 relative">
                                         <button
                                             onClick={() => removeCareer(career.id)}

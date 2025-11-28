@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStalk } from '../context/StalkContext';
 import { User, Calendar, Heart, Settings, Clock, LogOut } from 'lucide-react';
@@ -52,8 +52,8 @@ const MyPage = () => {
                                     <div className="flex-1">
                                         <div className="flex items-center gap-2 mb-2">
                                             <span className={`px-2 py-1 rounded text-xs font-bold ${res.status === 'upcoming' ? 'bg-blue-100 text-blue-700' :
-                                                res.status === 'completed' ? 'bg-green-100 text-green-700' :
-                                                    'bg-gray-100 text-gray-600'
+                                                    res.status === 'completed' ? 'bg-green-100 text-green-700' :
+                                                        'bg-gray-100 text-gray-600'
                                                 }`}>
                                                 {res.status === 'upcoming' ? '예정됨' :
                                                     res.status === 'completed' ? '완료됨' : '취소됨'}
@@ -155,8 +155,8 @@ const MyPage = () => {
                                         key={tab.id}
                                         onClick={() => setActiveTab(tab.id)}
                                         className={`flex items-center gap-3 px-6 py-4 text-left transition-colors ${activeTab === tab.id
-                                            ? 'bg-blue-50 text-blue-600 border-r-4 border-blue-600 font-bold'
-                                            : 'text-gray-600 hover:bg-gray-50'
+                                                ? 'bg-blue-50 text-blue-600 border-r-4 border-blue-600 font-bold'
+                                                : 'text-gray-600 hover:bg-gray-50'
                                             }`}
                                     >
                                         <tab.icon size={20} />

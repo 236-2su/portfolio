@@ -82,7 +82,7 @@ export default function LookeyDetail() {
                                 <FileText size={24} />
                             </a>
                             <a
-                                href="https://lab.ssafy.com/s13-ai-image-sub1/S13P21E101"
+                                href="https://github.com/yourusername/lookey"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"

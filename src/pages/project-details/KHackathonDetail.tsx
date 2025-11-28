@@ -76,7 +76,7 @@ export default function KHackathonDetail() {
                         </div>
                         <div className="flex gap-3">
                             <a
-                                href="https://github.com/236-2su/k-hackathon"
+                                href="https://github.com/yourusername/first-step-town"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"

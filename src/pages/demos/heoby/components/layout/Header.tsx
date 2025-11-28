@@ -18,7 +18,7 @@ export function Header() {
 
     // Handle sub-routes by finding the matching base route
     const currentRoute = Object.values(APP_ROUTES).find(route =>
-        location.endsWith(route)
+        location.endsWith(route) || location === basePath
     ) || APP_ROUTES.home;
 
     const pageTitle = PAGE_TITLES[currentRoute as keyof typeof PAGE_TITLES];

@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useStalk } from '../context/StalkContext';
-import { User, Menu, X } from 'lucide-react';
+import { User, LogOut, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -40,8 +40,8 @@ const Navbar = () => {
     return (
         <nav
             className={`fixed top-20 left-0 right-0 z-40 transition-all duration-300 ${isHome && !isScrolled
-                ? 'bg-transparent text-white'
-                : 'bg-white text-gray-900 shadow-md'
+                    ? 'bg-transparent text-white'
+                    : 'bg-white text-gray-900 shadow-md'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,8 +65,8 @@ const Navbar = () => {
                                 key={link.name}
                                 onClick={() => navigate(link.path)}
                                 className={`font-medium transition-colors ${isHome && !isScrolled
-                                    ? 'text-white/90 hover:text-white'
-                                    : 'text-gray-600 hover:text-blue-600'
+                                        ? 'text-white/90 hover:text-white'
+                                        : 'text-gray-600 hover:text-blue-600'
                                     }`}
                             >
                                 {link.name}
@@ -112,8 +112,8 @@ const Navbar = () => {
                             <button
                                 onClick={() => navigate('/demo/stalk/login')}
                                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${isHome && !isScrolled
-                                    ? 'bg-white text-blue-600 hover:bg-gray-100'
-                                    : 'bg-blue-600 text-white hover:bg-blue-700'
+                                        ? 'bg-white text-blue-600 hover:bg-gray-100'
+                                        : 'bg-blue-600 text-white hover:bg-blue-700'
                                     }`}
                             >
                                 로그인
