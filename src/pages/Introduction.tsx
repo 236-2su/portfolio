@@ -44,12 +44,12 @@ export default function Introduction() {
     {
       name: 'TOEIC',
       organization: 'ETS',
-      description: '698점',
+      description: '734점',
     },
     {
       name: 'OPIc',
       organization: 'ACTFL',
-      description: 'IM2 등급',
+      description: 'IM3 등급',
     },
   ];
 
