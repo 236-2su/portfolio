@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Award, GraduationCap, Code, FileCheck, Languages, Trophy } from 'lucide-react';
+import { GraduationCap, Code, FileCheck, Languages, Trophy } from 'lucide-react';
 
 export default function Introduction() {
   const profile = {

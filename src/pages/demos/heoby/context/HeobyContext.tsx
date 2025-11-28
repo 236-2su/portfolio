@@ -21,6 +21,7 @@ interface HeobyContextType {
     login: (role: UserRole, platform: Platform) => void;
     logout: () => void;
     toggleMonitoring: () => void;
+    selectPlatform: (platform: Platform) => void;
 }
 
 const HeobyContext = createContext<HeobyContextType | undefined>(undefined);
@@ -67,6 +68,7 @@ export function HeobyProvider({ children }: { children: ReactNode }) {
                 login,
                 logout,
                 toggleMonitoring,
+                selectPlatform: setPlatform,
             }}
         >
             {children}

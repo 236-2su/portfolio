@@ -3,14 +3,13 @@ import { HEADER_MENU_ITEMS } from "../../constants/menus";
 import {
     APP_ROUTES,
     PAGE_TITLES,
-    type AppRoute,
 } from "../../constants/routes";
 import { Link, useLocation } from "react-router-dom";
 import { Container } from "./Container";
 import { useHeoby } from "../../context/HeobyContext";
 
 export function Header() {
-    const location = useLocation().pathname as AppRoute;
+    const location = useLocation().pathname;
     const { platform } = useHeoby();
 
     // Determine base path based on platform

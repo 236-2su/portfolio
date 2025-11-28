@@ -18,6 +18,7 @@ interface Club {
     category: string;
     memberCount: number;
     balance: number;
+    description?: string;
 }
 
 interface LinBookContextType {
