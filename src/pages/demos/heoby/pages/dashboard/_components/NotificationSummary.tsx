@@ -17,23 +17,17 @@ export function NotificationSummary() {
         <BaseBox
             title="최근 알림"
             className="h-full w-full cursor-pointer hover:shadow-md transition-shadow"
-            contentClassName="flex items-center justify-center"
-            contentPadding={20}
+            contentClassName="h-full flex items-center justify-center"
+            contentPadding={12}
         >
             {isLoading ? (
-                <p className="text-sm text-gray-500">로딩 중...</p>
+                <p className="text-xs text-gray-400">로딩 중...</p>
             ) : error ? (
-                <p className="text-sm text-red-500">
-                    에러: {"잠시 후 다시 시도해주세요."}
-                </p>
+                <p className="text-xs text-red-400">에러 발생</p>
+            ) : !hasAlert || !highlighted ? (
+                <EmptyState />
             ) : (
-                <div className="w-full h-full flex flex-col justify-center">
-                    {!hasAlert || !highlighted ? (
-                        <EmptyState />
-                    ) : (
-                        <AlertHighlight severity={highlighted} />
-                    )}
-                </div>
+                <AlertHighlight severity={highlighted} />
             )}
         </BaseBox>
     );
@@ -41,11 +35,10 @@ export function NotificationSummary() {
 
 function EmptyState() {
     return (
-        <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-gray-200 bg-gray-50 py-10 text-center">
-            <div className="mb-2 text-3xl">🔔</div>
-            <p className="font-medium text-gray-700">새 알림이 없어요</p>
-            <p className="mt-1 text-sm text-gray-500">
-                긴급/주의 알림이 도착하면 여기에서 확인할 수 있어요.
+        <div className="flex flex-col items-center justify-center w-full h-full rounded-xl border-2 border-dashed border-green-200 bg-green-50/30 p-3">
+            <div className="text-3xl mb-2 opacity-60">✓</div>
+            <p className="text-xs font-semibold text-green-700">
+                알림이 없습니다
             </p>
         </div>
     );
@@ -57,39 +50,65 @@ function AlertHighlight({
     severity: { label: string; count: number; tone: "critical" | "warning" };
 }) {
     const isCritical = severity.tone === "critical";
-    const tone = isCritical
+    const colors = isCritical
         ? {
-            card: "border-red-100 bg-red-50/70",
-            dot: "bg-red-500",
-            pill: "bg-white/90 text-red-600",
-            accent: "text-red-600",
+            bg: "#FFF5F5",
+            border: "#FECACA",
+            labelBg: "#FFE4E6",
+            labelBorder: "#FECACA",
+            text: "#7F1D1D",
         }
         : {
-            card: "border-amber-100 bg-amber-50/70",
-            dot: "bg-amber-500",
-            pill: "bg-white/90 text-amber-600",
-            accent: "text-amber-600",
+            bg: "#FFFBEB",
+            border: "#FDE68A",
+            labelBg: "#FFF3C7",
+            labelBorder: "#FDE68A",
+            text: "#78350F",
         };
 
     return (
-        <div
-            className={`rounded-xl border px-4 py-4 shadow-sm h-full flex flex-col justify-between ${tone.card}`}
-            aria-live="assertive"
-        >
-            <div className="flex items-center justify-between mb-2">
-                <div className="flex items-center gap-2 text-sm font-semibold text-gray-800">
-                    <span className={`h-2.5 w-2.5 rounded-full ${tone.dot}`} />
-                    <span>{severity.label}</span>
-                </div>
-                <span
-                    className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${tone.pill}`}
+        <div className="w-full h-full flex flex-col justify-center gap-3">
+            {/* 상단: 라벨 + 카운트 */}
+            <div className="flex items-center justify-between">
+                <div
+                    className="px-2 py-1 rounded-md"
+                    style={{
+                        backgroundColor: colors.labelBg,
+                        border: `1px solid ${colors.labelBorder}`,
+                    }}
                 >
-                    {severity.count}건
+                    <span
+                        className="text-xs font-bold"
+                        style={{ color: colors.text }}
+                    >
+                        {severity.label}
+                    </span>
+                </div>
+                <div className="flex items-baseline gap-1">
+                    <span
+                        className="text-2xl font-extrabold leading-none"
+                        style={{ color: colors.text }}
+                    >
+                        {severity.count}
+                    </span>
+                    <span
+                        className="text-sm font-semibold"
+                        style={{ color: colors.text, opacity: 0.7 }}
+                    >
+                        건
+                    </span>
+                </div>
+            </div>
+
+            {/* 하단: 허수아비 정보 */}
+            <div className="bg-gray-50 rounded-lg px-2 py-1.5 flex items-center justify-between">
+                <span className="text-xs font-semibold text-gray-800 truncate">
+                    허수아비 1호
+                </span>
+                <span className="text-[10px] text-gray-500 ml-2 whitespace-nowrap">
+                    5분 전
                 </span>
             </div>
-            <p className={`text-sm font-medium leading-snug ${tone.accent}`}>
-                가장 최근 {severity.label} 알림이 도착했어요.
-            </p>
         </div>
     );
 }
