@@ -186,30 +186,7 @@ export default function KHackathonDetail() {
                     </div>
                 </motion.div>
 
-                {/* Project Screenshots */}
-                <motion.div
-                    className="card p-8 mb-8"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                >
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">프로젝트 스크린샷</h2>
-                    <div className="grid md:grid-cols-3 gap-4">
-                        {[
-                            '/assets/khackathon/1.png',
-                            '/assets/khackathon/2.png',
-                            '/assets/khackathon/3.png'
-                        ].map((src, index) => (
-                            <div key={index} className="rounded-lg overflow-hidden shadow-md border border-gray-100">
-                                <img
-                                    src={src}
-                                    alt={`First Step Town Screenshot ${index + 1}`}
-                                    className="w-full h-64 object-contain bg-gray-100"
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </motion.div>
+
 
                 {/* Key Features */}
                 <motion.div
