@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowLeft, Github, ExternalLink, Users, Calendar, Code, Video, Bot, TrendingUp, MessageSquare, Award, FileText } from 'lucide-react';
+import { ArrowLeft, Github, ExternalLink, Users, Calendar, Code, Video, Bot, TrendingUp, MessageSquare, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function StalkDetail() {
@@ -83,16 +83,7 @@ export default function StalkDetail() {
                         </div>
                         <div className="flex gap-3">
                             <a
-                                href="https://www.notion.so/E205-25679a75be70801fbfbbc15543cd387e"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
-                                title="Notion 문서"
-                            >
-                                <FileText size={24} />
-                            </a>
-                            <a
-                                href="https://lab.ssafy.com/s13-webmobile1-sub1/S13P11E205"
+                                href="https://github.com/236-2su/stalk"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
@@ -143,6 +134,101 @@ export default function StalkDetail() {
                         상담 내용을 자동으로 분석하고 요약 리포트를 생성하는 혁신적인 기능을 제공합니다.
                     </p>
                 </motion.div>
+
+                {/* My Role (Moved Up) */}
+                <motion.div
+                    className="card p-8 mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                >
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">담당 역할 (Frontend Developer)</h2>
+                    <div className="space-y-6 text-gray-700">
+                        {/* JWT Authentication */}
+                        <div>
+                            <h3 className="flex items-center gap-2 text-lg font-bold text-gray-800 mb-2">
+                                <span className="w-2 h-2 rounded-full bg-primary-600"></span>
+                                JWT & Redis 기반 인증 시스템
+                            </h3>
+                            <ul className="list-disc list-inside ml-4 space-y-1 text-gray-600">
+                                <li>
+                                    <span className="font-medium text-gray-800">토큰 관리 전략:</span> Access Token은 메모리/LocalStorage에 이중 보관하여 접근성을 높이고, Refresh Token은 <strong>Redis</strong>와 HttpOnly Cookie로 관리하여 보안 강화
+                                </li>
+                                <li>
+                                    <span className="font-medium text-gray-800">로그인 상태 유지:</span> 새로고침 시 쿠키를 통해 서버에 저장된 <strong>Redis</strong> 상의 Refresh Token을 검증하여 세션 유지
+                                </li>
+                                <li>
+                                    <span className="font-medium text-gray-800">Silent Refresh:</span> Axios Interceptor를 통해 액세스 토큰 만료(401) 시 자동으로 토큰을 재발급받는 로직 구현
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Real-time Communication & Chart */}
+                        <div>
+                            <h3 className="flex items-center gap-2 text-lg font-bold text-gray-800 mb-2">
+                                <span className="w-2 h-2 rounded-full bg-primary-600"></span>
+                                WebRTC 화상 상담 & 인터랙티브 차트 구현
+                            </h3>
+                            <ul className="list-disc list-inside ml-4 space-y-1 text-gray-600">
+                                <li>
+                                    <span className="font-medium text-gray-800">실시간 화상 통신:</span> OpenVidu를 활용하여 끊김 없는 다자간 화상 상담 환경 구축
+                                </li>
+                                <li>
+                                    <span className="font-medium text-gray-800">Chart.js & Konva.js 연동:</span> 주식 차트 위에 투명 캔버스 레이어를 중첩하여 양방향 드로잉 기능 개발
+                                </li>
+                                <li>
+                                    <span className="font-medium text-gray-800">기술적 챌린지 해결:</span> 차트의 Zoom/Pan 동작 시 발생하는 캔버스 레이어와의 <strong>좌표/비율 불일치 문제</strong>를 해결하기 위해, 차트 스케일 변화에 따른 드로잉 좌표 보정 로직 구현 및 WebSocket 실시간 동기화 처리
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </motion.div>
+
+                {/* Project Structure Image */}
+                <motion.div
+                    className="card p-8 mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                >
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">프로젝트 구조 및 아키텍처</h2>
+                    <div className="rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-4">
+                        <img
+                            src="/assets/stalk/arch.png"
+                            alt="Stalk Project Architecture"
+                            className="w-full max-h-[600px] object-contain mx-auto"
+                        />
+                    </div>
+                </motion.div>
+
+                {/* Feature Demo GIFs */}
+                <motion.div
+                    className="card p-8 mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                >
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">주요 기능 시연</h2>
+                    <div className="grid md:grid-cols-2 gap-6">
+                        {[
+                            { src: '/assets/stalk/AI요약.gif', label: 'AI 상담 화상 요약' },
+                            { src: '/assets/stalk/상담 입장, 상담.gif', label: '실시간 화상 상담' },
+                            { src: '/assets/stalk/stalk.gif', label: '메인 화면' }
+                        ].map((item, index) => (
+                            <div key={index} className="space-y-2">
+                                <div className="rounded-lg overflow-hidden shadow-md border border-gray-100 bg-gray-50 aspect-video flex items-center justify-center">
+                                    <img
+                                        src={item.src}
+                                        alt={item.label}
+                                        className="w-full h-full object-contain"
+                                    />
+                                </div>
+                                <p className="text-center text-sm text-gray-600 font-medium">{item.label}</p>
+                            </div>
+                        ))}
+                    </div>
+                </motion.div>
+
 
                 {/* Key Features with GIFs */}
                 <motion.div
@@ -266,21 +352,7 @@ export default function StalkDetail() {
                     </div>
                 </motion.div>
 
-                {/* My Role */}
-                <motion.div
-                    className="card p-8"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                >
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">담당 역할</h2>
-                    <div className="space-y-3 text-gray-700">
-                        <div>
-                            <span className="text-primary-600 font-semibold">Frontend</span>
-                            <span> : React 웹 애플리케이션 개발</span>
-                        </div>
-                    </div>
-                </motion.div>
+
             </div>
         </div>
     );

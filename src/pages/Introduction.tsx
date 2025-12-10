@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
-import { GraduationCap, Code, FileCheck, Languages, Trophy } from 'lucide-react';
+import { GraduationCap, FileCheck, Languages, Trophy, Database, Server, BrainCircuit, Layout, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Introduction() {
   const profile = {
     name: '이상욱',
     initials: 'SU',
-    title: 'Full-Stack Developer · Backend Developer',
-    bio: '다양한 기술 스택을 활용하여 실용적인 웹 애플리케이션을 개발하는 풀스택 개발자입니다. 백엔드 개발에 강점을 가지고 있으며, AI 기술을 활용한 혁신적인 서비스 구현 경험이 있습니다. 팀 프로젝트에서 리더십을 발휘하며 협업을 통해 성공적인 결과물을 만들어냅니다.',
+    title: 'AI 융합 서비스를 설계하는 백엔드 엔지니어',
+    bio: '단순한 기능 구현을 넘어, MSA 아키텍처와 AI 기술 접목을 통해 새로운 비즈니스 가치를 창출하는 개발자입니다. FastAPI를 활용한 AI 모델 서빙부터 Spring Boot 기반의 안정적인 서버 구현 및 확장성 있는 데이터 모델링까지 서비스의 핵심을 주도적으로 설계합니다. 다수의 프로젝트에서 팀 리더로서 기술적 난제를 해결하고 팀의 성장을 이끌며 협업의 시너지를 만들어왔습니다.',
   };
 
   const education = [
@@ -29,7 +30,7 @@ export default function Introduction() {
     {
       title: 'SSAFY 우수 프로젝트',
       organization: 'SSAFY',
-      date: '2024.08',
+      date: '2025.08',
       description: 'Stalk - 실시간 화상 투자 상담 플랫폼 개발',
       project: 'Stalk',
     },
@@ -53,17 +54,41 @@ export default function Introduction() {
     },
   ];
 
-  const skills = [
-    { name: 'Spring Boot', level: 60, category: 'Backend', color: 'from-green-500 to-green-600' },
-    { name: 'Django', level: 50, category: 'Backend', color: 'from-emerald-500 to-emerald-600' },
-    { name: 'React', level: 50, category: 'Frontend', color: 'from-blue-500 to-blue-600' },
-    { name: 'Vue.js', level: 30, category: 'Frontend', color: 'from-teal-500 to-teal-600' },
+  const skillCategories = [
+    {
+      title: 'Backend & Architecture',
+      icon: Database,
+      items: ['Spring Boot', 'Django', 'FastAPI', 'MySQL', 'Redis', 'JPA'],
+      description: 'Heoby 프로젝트에서 MSA 아키텍처를 설계하여 서비스 간 결합도를 낮추고 유지보수성을 높였습니다. Lookey 프로젝트에서는 Spring Security와 Redis를 연동하여 안전한 인증/인가 시스템을 구축하고 세션 관리를 최적화했습니다.',
+      color: 'bg-blue-50 text-blue-700',
+    },
+    {
+      title: 'DevOps & Infrastructure',
+      icon: Server,
+      items: ['Docker', 'Jenkins', 'AWS EC2', 'Nginx', 'GitLab CI'],
+      description: 'Heoby 프로젝트에서 Jenkins와 Docker를 활용해 CI/CD 파이프라인을 구축, 코드 변경 사항의 자동 빌드 및 무중단 배포를 실현했습니다. Linbook 등 다수의 프로젝트를 AWS EC2와 Nginx 환경에서 안정적으로 운영했습니다.',
+      color: 'bg-green-50 text-green-700',
+    },
+    {
+      title: 'AI Integration',
+      icon: BrainCircuit,
+      items: ['YOLO', 'MediaPipe', 'MQTT', 'Python', 'OpenCV'],
+      description: 'Heoby와 Lookey 프로젝트에서 YOLO 객체 인식 모델과 MediaPipe를 FastAPI 서버로 서빙하고, MQTT 프로토콜을 통해 추론 결과를 실시간으로 백엔드 및 클라이언트에 전송하는 저지연 AI 서비스를 구현했습니다.',
+      color: 'bg-purple-50 text-purple-700',
+    },
+    {
+      title: 'Frontend & Interaction',
+      icon: Layout,
+      items: ['React', 'Vue.js', 'TypeScript', 'WebRTC', 'Chart.js'],
+      description: 'Stalk 프로젝트에서 WebRTC(OpenVidu)와 WebSocket을 결합하여 실시간 화상 채팅 및 차트 동기화 기능을 구현했습니다. MyFin 프로젝트에서는 Chart.js를 활용해 복잡한 금융 데이터를 직관적인 시각화 차트로 제공했습니다.',
+      color: 'bg-orange-50 text-orange-700',
+    },
   ];
 
   const techStack = [
-    'Java', 'Python', 'JavaScript', 'TypeScript', 'Kotlin',
-    'MySQL', 'SQLite', 'FastAPI', 'OpenVidu', 'WebRTC',
-    'YOLO', 'MediaPipe', 'MQTT', 'Docker', 'Git', 'Jira',
+    'Java (Spring Boot)', 'Python (Django/FastAPI)', 'TypeScript (React)', 'Kotlin (Android)',
+    'MySQL & JPA', 'Redis (Caching)', 'WebRTC & Socket', 'MQTT (IoT)',
+    'Docker & Jenkins', 'AWS (EC2)', 'GitLab CI/CD', 'Jira (Agile)',
   ];
 
   return (
@@ -144,7 +169,7 @@ export default function Introduction() {
           </div>
         </motion.div>
 
-        {/* Skills Section */}
+        {/* Skills Section (Replaced) */}
         <motion.div
           className="mb-12"
           initial={{ opacity: 0, y: 50 }}
@@ -152,50 +177,64 @@ export default function Introduction() {
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           <h2 className="text-3xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-            <Code className="text-primary-600" size={36} />
+            <Database className="text-primary-600" size={36} />
             Technical Skills
           </h2>
 
-          {/* Main Skills with Progress Bars */}
-          <div className="card p-6 mb-6">
-            <h3 className="text-xl font-bold text-gray-800 mb-4">Core Technologies</h3>
-            <div className="space-y-4">
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                >
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="font-semibold text-gray-700">{skill.name}</span>
-                    <span className="text-sm text-gray-500">{skill.level}%</span>
+          <div className="grid md:grid-cols-2 gap-6">
+            {skillCategories.map((category, index) => (
+              <motion.div
+                key={index}
+                className="card p-6 h-full flex flex-col"
+                whileHover={{ y: -5 }}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 + index * 0.1 }}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`p-3 rounded-lg ${category.color} bg-opacity-20`}>
+                    <category.icon size={24} />
                   </div>
-                  <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
-                    <motion.div
-                      className={`h-full bg-gradient-to-r ${skill.color} rounded-full`}
-                      initial={{ width: 0 }}
-                      animate={{ width: `${skill.level}%` }}
-                      transition={{ delay: 0.6 + index * 0.1, duration: 0.8 }}
-                    />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+                  <h3 className="text-xl font-bold text-gray-800">{category.title}</h3>
+                </div>
 
-          {/* Tech Stack Tags */}
-          <div className="card p-6">
-            <h3 className="text-xl font-bold text-gray-800 mb-4">Tech Stack</h3>
-            <div className="flex flex-wrap gap-2">
+                <p className="text-gray-600 mb-4 flex-grow leading-relaxed">
+                  {category.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {category.items.map((item, i) => (
+                    <span key={i} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Tech Stack Tags Section */}
+        <motion.div
+          className="mb-12"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+        >
+          <div className="card p-8 bg-white/50 backdrop-blur-sm border-2 border-primary-100">
+            <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+              <span className="w-2 h-8 bg-primary-500 rounded-full"></span>
+              Core Tools & Keywords
+            </h3>
+            <div className="flex flex-wrap gap-3">
               {techStack.map((tech, index) => (
                 <motion.span
                   key={index}
-                  className="px-4 py-2 bg-gradient-to-r from-primary-100 to-secondary-100 text-primary-700 rounded-full text-sm font-medium border border-primary-200"
+                  className="px-4 py-2 bg-gradient-to-r from-white to-gray-50 border border-gray-200 text-gray-700 rounded-lg text-sm font-semibold hover:border-primary-300 hover:text-primary-600 hover:shadow-sm transition-all shadow-sm"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.6 + index * 0.05 }}
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  transition={{ delay: 0.6 + index * 0.03 }}
                 >
                   {tech}
                 </motion.span>
@@ -275,6 +314,24 @@ export default function Introduction() {
               </motion.div>
             ))}
           </div>
+        </motion.div>
+        {/* Project Call to Action Button */}
+        <motion.div
+          className="text-center mt-20"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9 }}
+        >
+          <Link to="/projects">
+            <motion.button
+              className="group bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-8 py-4 rounded-full text-xl font-bold shadow-lg inline-flex items-center gap-3 hover:shadow-xl hover:scale-105 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              프로젝트 상세 보기
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </div>

@@ -120,6 +120,51 @@ export default function SsafyFinanceDetail() {
                     </p>
                 </motion.div>
 
+                {/* My Role (Moved Up) */}
+                <motion.div
+                    className="card p-8 mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                >
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">담당 역할 (Team Leader & Full Stack)</h2>
+                    <div className="space-y-6 text-gray-700">
+                        {/* Backend */}
+                        <div>
+                            <h3 className="flex items-center gap-2 text-lg font-bold text-gray-800 mb-2">
+                                <span className="w-2 h-2 rounded-full bg-primary-600"></span>
+                                Django 기반 금융 데이터 처리 서버 구축
+                            </h3>
+                            <ul className="list-disc list-inside ml-4 space-y-1 text-gray-600">
+                                <li>
+                                    <span className="font-medium text-gray-800">데이터 수집 및 가공:</span> 금융감독원 API로부터 대용량의 금융 상품 데이터를 수집하여 SQLite 데이터베이스에 적재하고, 사용자 맞춤 추천을 위한 데이터 가공 로직 구현
+                                </li>
+                                <li>
+                                    <span className="font-medium text-gray-800">DRF API 개발:</span> RESTful API를 설계하여 프론트엔드에 효율적으로 데이터를 제공하고, Serializer를 활용한 데이터 검증 및 직렬화 처리
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Frontend */}
+                        <div>
+                            <h3 className="flex items-center gap-2 text-lg font-bold text-gray-800 mb-2">
+                                <span className="w-2 h-2 rounded-full bg-primary-600"></span>
+                                Vue.js 인터랙티브 웹 애플리케이션 개발
+                            </h3>
+                            <ul className="list-disc list-inside ml-4 space-y-1 text-gray-600">
+                                <li>
+                                    <span className="font-medium text-gray-800">데이터 시각화:</span> Chart.js를 활용하여 금/은 시세 변동 그래프와 환율 정보를 시각적으로 구현하여 사용자 경험(UX) 향상
+                                </li>
+                                <li>
+                                    <span className="font-medium text-gray-800">컴포넌트 중심 설계:</span> 재사용 가능한 Vue 컴포넌트를 설계하여 유지보수성을 높이고, Pinia/Vuex를 활용한 효율적인 전역 상태 관리
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </motion.div>
+
+
+
                 {/* Key Features */}
                 <motion.div
                     className="mb-8"
@@ -206,25 +251,7 @@ export default function SsafyFinanceDetail() {
                     </div>
                 </motion.div>
 
-                {/* My Role */}
-                <motion.div
-                    className="card p-8"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                >
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">담당 역할</h2>
-                    <div className="space-y-3 text-gray-700">
-                        <div>
-                            <span className="text-primary-600 font-semibold">Team Leader</span>
-                            <span> : 프로젝트 기획 및 일정 관리</span>
-                        </div>
-                        <div>
-                            <span className="text-primary-600 font-semibold">Full Stack</span>
-                            <span> : Django & Vue.js 웹 서비스 구현</span>
-                        </div>
-                    </div>
-                </motion.div>
+
             </div>
         </div>
     );

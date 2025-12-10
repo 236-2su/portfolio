@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowLeft, Github, ExternalLink, Users, Calendar, Code, Eye, Map, ShoppingCart, AlertTriangle, Navigation, FileText } from 'lucide-react';
+import { ArrowLeft, Github, ExternalLink, Users, Calendar, Code, Eye, Map, ShoppingCart, AlertTriangle, Navigation } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function LookeyDetail() {
@@ -72,17 +72,9 @@ export default function LookeyDetail() {
                             <p className="text-md text-gray-500 mt-2">눈을 감아도 편의점 세상을 보여주는 루키</p>
                         </div>
                         <div className="flex gap-3">
+
                             <a
-                                href="https://charmed-sheet-c88.notion.site/Lookey-25479a75be7080afa804e9a044432cbc"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
-                                title="Notion 문서"
-                            >
-                                <FileText size={24} />
-                            </a>
-                            <a
-                                href="https://github.com/yourusername/lookey"
+                                href="https://github.com/236-2su/lookey"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
@@ -135,6 +127,53 @@ export default function LookeyDetail() {
                             YOLO와 EfficientNet을 활용한 고정밀 AI 인식 기술과 직관적인 음성 UI를 통해
                             시각장애인의 편의점 이용을 더욱 편리하게 만들고, 독립성을 키우며, 편의성을 제공합니다.
                         </p>
+                    </div>
+                </motion.div>
+
+                {/* My Role (Moved Up) */}
+                <motion.div
+                    className="card p-8 mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                >
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">담당 역할 (Team Leader & Backend Developer)</h2>
+                    <div className="space-y-6 text-gray-700">
+                        {/* Backend & AI Pipeline */}
+                        <div>
+                            <h3 className="flex items-center gap-2 text-lg font-bold text-gray-800 mb-2">
+                                <span className="w-2 h-2 rounded-full bg-primary-600"></span>
+                                Backend API 및 AI 서비스 파이프라인 구축
+                            </h3>
+                            <ul className="list-disc list-inside ml-4 space-y-1 text-gray-600">
+                                <li>
+                                    <span className="font-medium text-gray-800">FastAPI & AI 연동:</span> YOLO(객체 인식) 및 EfficientNet(이미지 분류) 모델을 서빙하는 FastAPI 서버를 구축하고, Spring Boot 백엔드와의 효율적인 통신 구조 설계
+                                </li>
+                                <li>
+                                    <span className="font-medium text-gray-800">인증/보안 시스템:</span> Spring Security와 JWT, Redis를 활용하여 사용자 세션 관리 및 개인 맞춤형 정보(알레르기 데이터 등) 보호 로직 구현
+                                </li>
+                                <li>
+                                    <span className="font-medium text-gray-800">CI/CD 인프라:</span> Jenkins와 Docker를 도입하여 백엔드/AI 서버의 배포 자동화 환경 구성
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </motion.div>
+
+                {/* System Architecture */}
+                <motion.div
+                    className="card p-8 mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                >
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">시스템 아키텍처</h2>
+                    <div className="rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                        <img
+                            src="/assets/lookey/SystemArchitecture.png"
+                            alt="Lookey System Architecture"
+                            className="w-full h-auto object-contain bg-white"
+                        />
                     </div>
                 </motion.div>
 
@@ -237,33 +276,7 @@ export default function LookeyDetail() {
                     </div>
                 </motion.div>
 
-                {/* My Role */}
-                <motion.div
-                    className="card p-8"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 }}
-                >
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">담당 역할</h2>
-                    <div className="space-y-3 text-gray-700">
-                        <div>
-                            <span className="text-primary-600 font-semibold">Team Leader</span>
-                            <span> : 프로젝트 기획 및 팀 관리</span>
-                        </div>
-                        <div>
-                            <span className="text-primary-600 font-semibold">Infrastructure</span>
-                            <span> : Docker & Jenkins CI/CD 구축</span>
-                        </div>
-                        <div>
-                            <span className="text-primary-600 font-semibold">Backend</span>
-                            <span> : Spring Boot API 설계 및 구현</span>
-                        </div>
-                        <div>
-                            <span className="text-primary-600 font-semibold">Frontend</span>
-                            <span> : Android 앱 개발</span>
-                        </div>
-                    </div>
-                </motion.div>
+
             </div>
         </div>
     );

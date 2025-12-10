@@ -76,7 +76,7 @@ export default function KHackathonDetail() {
                         </div>
                         <div className="flex gap-3">
                             <a
-                                href="https://github.com/yourusername/first-step-town"
+                                href="https://github.com/236-2su/first-step-town"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
@@ -140,6 +140,74 @@ export default function KHackathonDetail() {
                             더욱 몰입감 있고 재미있는 소통 방식을 제공하고자 개발되었습니다.
                             실시간 채팅, 미니 게임, 커뮤니티 활동 등을 통해 사용자들이 자연스럽게 교류할 수 있습니다.
                         </p>
+                    </div>
+                </motion.div>
+
+                {/* My Role (Moved Up) */}
+                <motion.div
+                    className="card p-8 mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                >
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">담당 역할 (Backend & Metaverse Integration)</h2>
+                    <div className="space-y-6 text-gray-700">
+                        {/* Backend */}
+                        <div>
+                            <h3 className="flex items-center gap-2 text-lg font-bold text-gray-800 mb-2">
+                                <span className="w-2 h-2 rounded-full bg-primary-600"></span>
+                                Spring Boot REST API 서버 구축
+                            </h3>
+                            <ul className="list-disc list-inside ml-4 space-y-1 text-gray-600">
+                                <li>
+                                    <span className="font-medium text-gray-800">API 설계 및 구현:</span> 사용자 정보, 랭킹 시스템, 게시판 등 메타버스 내 데이터를 관리하기 위한 RESTful API 서버 개발
+                                </li>
+                                <li>
+                                    <span className="font-medium text-gray-800">데이터베이스 설계:</span> MySQL을 사용하여 게임 데이터와 커뮤니티 데이터를 효율적으로 관리하기 위한 ERD 설계 및 정규화 수행
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Metaverse Integration */}
+                        <div>
+                            <h3 className="flex items-center gap-2 text-lg font-bold text-gray-800 mb-2">
+                                <span className="w-2 h-2 rounded-full bg-primary-600"></span>
+                                React 및 메타버스 플랫폼(Zep) 연동
+                            </h3>
+                            <ul className="list-disc list-inside ml-4 space-y-1 text-gray-600">
+                                <li>
+                                    <span className="font-medium text-gray-800">웹-앱 인터페이스 통신:</span> React로 구현된 웹 뷰와 Zep 메타버스 엔진 간의 양방향 통신(Bridge) 로직을 구현하여 게임 이벤트와 웹 UI 동기화
+                                </li>
+                                <li>
+                                    <span className="font-medium text-gray-800">실시간 상호작용:</span> 스크립트를 통해 메타버스 내 오브젝트 상호작용 시 백엔드 API를 호출하여 실시간으로 게임 상태 업데이트
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </motion.div>
+
+                {/* Project Screenshots */}
+                <motion.div
+                    className="card p-8 mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                >
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">프로젝트 스크린샷</h2>
+                    <div className="grid md:grid-cols-3 gap-4">
+                        {[
+                            '/assets/khackathon/1.png',
+                            '/assets/khackathon/2.png',
+                            '/assets/khackathon/3.png'
+                        ].map((src, index) => (
+                            <div key={index} className="rounded-lg overflow-hidden shadow-md border border-gray-100">
+                                <img
+                                    src={src}
+                                    alt={`First Step Town Screenshot ${index + 1}`}
+                                    className="w-full h-64 object-contain bg-gray-100"
+                                />
+                            </div>
+                        ))}
                     </div>
                 </motion.div>
 
@@ -220,25 +288,7 @@ export default function KHackathonDetail() {
                     </div>
                 </motion.div>
 
-                {/* My Role */}
-                <motion.div
-                    className="card p-8"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.7 }}
-                >
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">담당 역할</h2>
-                    <div className="space-y-3 text-gray-700">
-                        <div>
-                            <span className="text-primary-600 font-semibold">Backend</span>
-                            <span> : Spring Boot & MySQL 서버 구축</span>
-                        </div>
-                        <div>
-                            <span className="text-primary-600 font-semibold">Frontend</span>
-                            <span> : React & Zep Script 메타버스 연동</span>
-                        </div>
-                    </div>
-                </motion.div>
+
             </div>
         </div>
     );

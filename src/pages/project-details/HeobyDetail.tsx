@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowLeft, Github, ExternalLink, Users, Calendar, Code, Video, Bell, Activity, Shield, BarChart3, Smartphone, FileText } from 'lucide-react';
+import { ArrowLeft, Github, ExternalLink, Users, Calendar, Code, Video, Bell, Activity, Shield, BarChart3, Smartphone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function HeobyDetail() {
@@ -8,7 +8,7 @@ export default function HeobyDetail() {
             title: '실시간 영상 스트리밍',
             description: 'MediaMTX 서버를 통한 RTSP 기반 실시간 영상 스트리밍을 제공합니다. 웹과 모바일 앱에서 실시간으로 모니터링 영상을 확인할 수 있습니다.',
             icon: Video,
-            gif: '/Portfolio/04.S13P31E106/assets/web_front.gif',
+            gif: '/assets/heoby/web_front.gif',
         },
         {
             title: 'AI 객체 감지 및 포즈 추정',
@@ -19,7 +19,7 @@ export default function HeobyDetail() {
             title: '실시간 알림 시스템',
             description: 'MQTT 프로토콜을 통해 이벤트를 실시간으로 수신하고, Firebase Cloud Messaging(FCM)을 통해 모바일 디바이스로 즉각적인 알림을 전송합니다.',
             icon: Bell,
-            gif: '/Portfolio/04.S13P31E106/assets/fall_down_streaming+notification.gif',
+            gif: '/assets/heoby/fall_down_streaming+notification.gif',
         },
         {
             title: '모니터링 대시보드',
@@ -30,7 +30,7 @@ export default function HeobyDetail() {
             title: '모바일 앱 & 워치 연동',
             description: 'Android 모바일 앱과 갤럭시 워치를 통해 언제 어디서나 알림을 받고 모니터링할 수 있습니다.',
             icon: Smartphone,
-            gif: '/Portfolio/04.S13P31E106/assets/Phone_screen.gif',
+            gif: '/assets/heoby/Phone_screen.gif',
         },
         {
             title: '인증 및 보안',
@@ -73,17 +73,9 @@ export default function HeobyDetail() {
                             <p className="text-xl text-gray-600">AI 기반 실시간 모니터링 시스템</p>
                         </div>
                         <div className="flex gap-3">
+
                             <a
-                                href="https://charmed-sheet-c88.notion.site/28079a75be708085bcfefaadab7e59e8"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
-                                title="Notion 문서"
-                            >
-                                <FileText size={24} />
-                            </a>
-                            <a
-                                href="https://github.com/yourusername/heoby"
+                                href="https://github.com/236-2su/heoby"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
@@ -132,6 +124,72 @@ export default function HeobyDetail() {
                         마이크로 서비스 아키텍처를 기반으로 백엔드, 프론트엔드, ML 추론 서버가 유기적으로 연동되며,
                         웹과 모바일 앱, 그리고 갤럭시 워치까지 다양한 플랫폼에서 실시간 모니터링과 알림을 받을 수 있습니다.
                     </p>
+                </motion.div>
+
+                {/* My Role (Moved Up) */}
+                <motion.div
+                    className="card p-8 mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                >
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">담당 역할 (Team Leader & Infra & Backend)</h2>
+                    <div className="space-y-6 text-gray-700">
+                        {/* Infrastructure & DevOps */}
+                        <div>
+                            <h3 className="flex items-center gap-2 text-lg font-bold text-gray-800 mb-2">
+                                <span className="w-2 h-2 rounded-full bg-primary-600"></span>
+                                MSA 인프라 및 CI/CD 파이프라인 구축
+                            </h3>
+                            <ul className="list-disc list-inside ml-4 space-y-1 text-gray-600">
+                                <li>
+                                    <span className="font-medium text-gray-800">Docker 컨테이너화:</span> Backend, Frontend, ML Inference Server, MediaMTX 등 각 서비스를 마이크로 서비스 단위로 컨테이너화하여 배포 효율성 증대
+                                </li>
+                                <li>
+                                    <span className="font-medium text-gray-800">Jenkins 자동화:</span> Gitlab Webhook을 활용하여 Dev/Prod 환경별 자동 빌드 및 배포 파이프라인(CD) 구축
+                                </li>
+                                <li>
+                                    <span className="font-medium text-gray-800">미디어 서버 구축:</span> MediaMTX를 활용하여 RTSP 프로토콜 기반의 저지연 실시간 영상 스트리밍 환경 구성
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Backend & AI Integration */}
+                        <div>
+                            <h3 className="flex items-center gap-2 text-lg font-bold text-gray-800 mb-2">
+                                <span className="w-2 h-2 rounded-full bg-primary-600"></span>
+                                실시간 AI 추론 시스템 및 이벤트 처리 아키텍처
+                            </h3>
+                            <ul className="list-disc list-inside ml-4 space-y-1 text-gray-600">
+                                <li>
+                                    <span className="font-medium text-gray-800">FastAPI 추론 서버:</span> YOLO v8(객체 감지)과 MediaPipe(포즈 추정)를 통합한 경량화된 AI 추론 서버 개발
+                                </li>
+                                <li>
+                                    <span className="font-medium text-gray-800">이벤트 기반 통신:</span> MQTT 프로토콜(Eclipse Paho)을 도입하여, AI 서버의 감지 이벤트를 백엔드 및 클라이언트로 실시간 전송 (Polling 방식 대비 부하 감소)
+                                </li>
+                                <li>
+                                    <span className="font-medium text-gray-800">이상 행동 분석 로직:</span> SVM 분류기를 활용하여 단순 객체 감지를 넘어 앉기/쓰러짐 등의 구체적인 행동 패턴을 분석하는 알고리즘 구현
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </motion.div>
+
+                {/* System Architecture */}
+                <motion.div
+                    className="card p-8 mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                >
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">시스템 아키텍처</h2>
+                    <div className="rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                        <img
+                            src="/assets/heoby/system_architecture.png"
+                            alt="Heoby System Architecture"
+                            className="w-full h-auto object-contain bg-white"
+                        />
+                    </div>
                 </motion.div>
 
                 {/* Key Features with GIFs */}
@@ -245,33 +303,7 @@ export default function HeobyDetail() {
                     </div>
                 </motion.div>
 
-                {/* My Role */}
-                <motion.div
-                    className="card p-8"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 }}
-                >
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">담당 역할</h2>
-                    <div className="space-y-3 text-gray-700">
-                        <div>
-                            <span className="text-primary-600 font-semibold">Team Leader</span>
-                            <span> : 프로젝트 기획 및 팀 관리</span>
-                        </div>
-                        <div>
-                            <span className="text-primary-600 font-semibold">Infrastructure</span>
-                            <span> : Docker & Jenkins CI/CD 구축</span>
-                        </div>
-                        <div>
-                            <span className="text-primary-600 font-semibold">Backend</span>
-                            <span> : FastAPI & MQTT 실시간 통신 구현</span>
-                        </div>
-                        <div>
-                            <span className="text-primary-600 font-semibold">AI</span>
-                            <span> : YOLO & MediaPipe 모델 연동</span>
-                        </div>
-                    </div>
-                </motion.div>
+
             </div>
         </div>
     );

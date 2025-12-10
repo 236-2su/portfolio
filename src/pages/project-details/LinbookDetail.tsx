@@ -37,10 +37,10 @@ export default function LinbookDetail() {
     ];
 
     const techStack = {
-        frontend: ['Android (Kotlin)', 'XML Layouts', 'Material Design'],
-        backend: ['Spring Boot', 'Java', 'JPA', 'MySQL'],
-        infrastructure: ['AWS EC2', 'AWS RDS'],
-        security: ['Spring Security', 'JWT'],
+        frontend: ['Android (Kotlin)', 'Jetpack Compose', 'Retrofit'],
+        backend: ['Django', 'Python', 'DRF', 'SQLite'],
+        infrastructure: ['AWS EC2', 'Docker', 'Nginx'],
+        security: ['Django Security', 'JWT'],
     };
 
 
@@ -71,7 +71,7 @@ export default function LinbookDetail() {
                         </div>
                         <div className="flex gap-3">
                             <a
-                                href="https://github.com/yourusername/linbook"
+                                href="https://github.com/236-2su/linbook"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
@@ -121,6 +121,49 @@ export default function LinbookDetail() {
                             공금 내역을 기록하고 조회할 수 있습니다. 영수증 사진 첨부, 카테고리별 분류, 통계 기능 등을 통해
                             동아리 재정을 체계적으로 관리할 수 있습니다.
                         </p>
+                    </div>
+                </motion.div>
+
+                {/* My Role (Moved Up) */}
+                <motion.div
+                    className="card p-8 mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                >
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">담당 역할 (Team Leader & Full Stack)</h2>
+                    <div className="space-y-6 text-gray-700">
+                        {/* Backend & Deployment */}
+                        <div>
+                            <h3 className="flex items-center gap-2 text-lg font-bold text-gray-800 mb-2">
+                                <span className="w-2 h-2 rounded-full bg-primary-600"></span>
+                                Django REST API 서버 개발 및 AWS 배포
+                            </h3>
+                            <ul className="list-disc list-inside ml-4 space-y-1 text-gray-600">
+                                <li>
+                                    <span className="font-medium text-gray-800">API 서버 구축:</span> Django REST Framework(DRF)를 활용하여 동아리 장부 관리 데이터(입출금 내역, 회원 정보)를 처리하는 RESTful API 설계 및 구현
+                                </li>
+                                <li>
+                                    <span className="font-medium text-gray-800">클라우드 배포:</span> AWS EC2(Ubuntu) 인스턴스에 Docker와 Nginx를 구성하여 백엔드 서버를 배포하고 안정적인 서비스 운영 환경 마련
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Android & 3rd Party API Integration */}
+                        <div>
+                            <h3 className="flex items-center gap-2 text-lg font-bold text-gray-800 mb-2">
+                                <span className="w-2 h-2 rounded-full bg-primary-600"></span>
+                                Android 앱 개발 및 AI/금융 서비스 연동
+                            </h3>
+                            <ul className="list-disc list-inside ml-4 space-y-1 text-gray-600">
+                                <li>
+                                    <span className="font-medium text-gray-800">Android(Kotlin):</span> Jetpack Compose를 활용하여 직관적인 모바일 UI를 구현하고, Retrofit으로 백엔드와 통신
+                                </li>
+                                <li>
+                                    <span className="font-medium text-gray-800">외부 서비스 연동:</span> Clova OCR로 영수증 자동 인식, Gemini AI로 회계 데이터 분석 리포트 생성, 금융 API를 통해 실시간 계좌 조회 기능 통합
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </motion.div>
 
@@ -212,37 +255,7 @@ export default function LinbookDetail() {
                     </div>
                 </motion.div>
 
-                {/* My Role */}
-                <motion.div
-                    className="card p-8"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 }}
-                >
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">담당 역할</h2>
-                    <div className="space-y-3 text-gray-700">
-                        <div>
-                            <span className="text-primary-600 font-semibold">Team Leader</span>
-                            <span> : 프로젝트 기획 및 팀 관리</span>
-                        </div>
-                        <div>
-                            <span className="text-primary-600 font-semibold">Infrastructure</span>
-                            <span> : AWS EC2 배포</span>
-                        </div>
-                        <div>
-                            <span className="text-primary-600 font-semibold">Backend</span>
-                            <span> : Django REST API 개발</span>
-                        </div>
-                        <div>
-                            <span className="text-primary-600 font-semibold">Frontend</span>
-                            <span> : Android(Kotlin) 앱 구현</span>
-                        </div>
-                        <div>
-                            <span className="text-primary-600 font-semibold">Database</span>
-                            <span> : SQLite 설계 및 최적화</span>
-                        </div>
-                    </div>
-                </motion.div>
+
             </div>
         </div>
     );
