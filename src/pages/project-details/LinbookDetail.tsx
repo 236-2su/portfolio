@@ -71,7 +71,7 @@ export default function LinbookDetail() {
                         </div>
                         <div className="flex gap-3">
                             <a
-                                href="https://github.com/236-2su/linbook"
+                                href="https://github.com/236-2su/Lin.book"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
