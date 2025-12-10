@@ -213,7 +213,7 @@ export default function StalkDetail() {
                         {[
                             { src: '/assets/stalk/AI요약.gif', label: 'AI 상담 화상 요약' },
                             { src: '/assets/stalk/상담 입장, 상담.gif', label: '실시간 화상 상담' },
-                            { src: '/assets/stalk/stalk.gif', label: '메인 화면' }
+                            { src: '/assets/stalk/stalk.gif', label: '메인 화면 시연' }
                         ].map((item, index) => (
                             <div key={index} className="space-y-2">
                                 <div className="rounded-lg overflow-hidden shadow-md border border-gray-100 bg-gray-50 aspect-video flex items-center justify-center">
@@ -357,3 +357,4 @@ export default function StalkDetail() {
         </div>
     );
 }
+
