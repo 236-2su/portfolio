@@ -8,7 +8,7 @@ export default function Projects() {
     <div className="min-h-screen pt-24 pb-16 px-6">
       <div className="container mx-auto max-w-6xl">
         <motion.h1
-          className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent"
+          className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent pb-2"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
