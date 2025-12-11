@@ -211,11 +211,11 @@ export default function HeobyDetail() {
                                 transition={{ delay: 0.3 + index * 0.1 }}
                             >
                                 {feature.gif && (
-                                    <div className="mb-4 rounded-lg overflow-hidden bg-gray-100">
+                                    <div className="mb-4 rounded-lg overflow-hidden border border-gray-200">
                                         <img
                                             src={feature.gif}
                                             alt={feature.title}
-                                            className="w-full h-48 object-cover"
+                                            className="w-full h-auto object-contain"
                                             onError={(e) => {
                                                 e.currentTarget.style.display = 'none';
                                             }}

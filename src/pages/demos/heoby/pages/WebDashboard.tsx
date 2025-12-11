@@ -8,7 +8,18 @@ import { MapTable } from "./dashboard/_components/MapTable";
 import "../styles/theme.css";
 import "../styles/dashboard.css";
 
+import { useNavigate } from "react-router-dom";
+import { useHeoby } from "../context/HeobyContext";
+
 export default function WebDashboard() {
+    const navigate = useNavigate();
+    const { isLoggedIn, platform } = useHeoby();
+
+    if (!isLoggedIn || platform !== 'web') {
+        navigate('/demo/heoby');
+        return null;
+    }
+
     return (
         <HeobyStoreProvider>
             <BaseLayout>

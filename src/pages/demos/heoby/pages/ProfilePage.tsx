@@ -16,7 +16,7 @@ export default function ProfilePage() {
             <div className="py-4">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6">프로필</h2>
 
-                <div className="max-w-2xl space-y-4">
+                <div className="max-w-2xl mx-auto space-y-4">
                     {/* 사용자 정보 카드 */}
                     <BaseBox title="사용자 정보">
                         <div className="space-y-4">

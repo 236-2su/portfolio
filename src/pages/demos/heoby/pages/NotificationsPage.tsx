@@ -53,7 +53,7 @@ export default function NotificationsPage() {
                     <h2 className="text-2xl font-bold text-gray-800">알림</h2>
                 </div>
 
-                <BaseBox title="전체 알림" className="max-w-4xl">
+                <BaseBox title="전체 알림" className="max-w-4xl mx-auto">
                     <div className="space-y-3">
                         {notifications.map((notification) => (
                             <div
