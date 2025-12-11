@@ -1,16 +1,14 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useLookey, type UserRole } from '../context/LookeyContext';
-import { User, Shield } from 'lucide-react';
+import { useLookey } from '../context/LookeyContext';
+import { User } from 'lucide-react';
 import lookeyLogo from '../../../../assets/logos/lookey.svg';
 
 const Login = () => {
     const navigate = useNavigate();
     const { login } = useLookey();
-    const [selectedRole, setSelectedRole] = useState<UserRole>('user');
 
     const handleLogin = () => {
-        login(selectedRole);
+        login('user');
         navigate('/demo/lookey/home');
     };
 
@@ -53,39 +51,16 @@ const Login = () => {
 
                             <div>
                                 <label className="block text-sm font-black text-gray-700 mb-4 bg-orange-100 inline-block px-2 text-lg transform -rotate-2 rounded">
-                                    SELECT ROLE
+                                    ROLE
                                 </label>
-                                <div className="grid grid-cols-2 gap-4">
-                                    <button
-                                        onClick={() => setSelectedRole('user')}
-                                        className={`flex flex-col items-center justify-center p-4 border-2 rounded-xl transition-all ${selectedRole === 'user'
-                                            ? 'border-orange-500 bg-orange-50 scale-105 shadow-md'
-                                            : 'border-gray-100 hover:border-orange-200 hover:bg-gray-50'
-                                            }`}
-                                    >
-                                        <div className={`p-3 rounded-full mb-2 ${selectedRole === 'user' ? 'bg-orange-500 text-white' : 'bg-gray-100 text-gray-400'}`}>
-                                            <User size={28} />
-                                        </div>
-                                        <span className={`font-bold text-lg ${selectedRole === 'user' ? 'text-orange-600' : 'text-gray-500'}`}>
-                                            주인공
-                                        </span>
-                                        <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full mt-1">시각장애인</span>
-                                    </button>
-                                    <button
-                                        onClick={() => setSelectedRole('helper')}
-                                        className={`flex flex-col items-center justify-center p-4 border-2 rounded-xl transition-all ${selectedRole === 'helper'
-                                            ? 'border-orange-500 bg-orange-50 scale-105 shadow-md'
-                                            : 'border-gray-100 hover:border-orange-200 hover:bg-gray-50'
-                                            }`}
-                                    >
-                                        <div className={`p-3 rounded-full mb-2 ${selectedRole === 'helper' ? 'bg-orange-500 text-white' : 'bg-gray-100 text-gray-400'}`}>
-                                            <Shield size={28} />
-                                        </div>
-                                        <span className={`font-bold text-lg ${selectedRole === 'helper' ? 'text-orange-600' : 'text-gray-500'}`}>
-                                            서포터
-                                        </span>
-                                        <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full mt-1">활동 보조인</span>
-                                    </button>
+                                <div className="flex flex-col items-center justify-center p-4 border-2 border-orange-500 bg-orange-50 rounded-xl shadow-md transform scale-105">
+                                    <div className="p-3 rounded-full mb-2 bg-orange-500 text-white">
+                                        <User size={32} />
+                                    </div>
+                                    <span className="font-bold text-lg text-orange-600">
+                                        주인공
+                                    </span>
+                                    <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full mt-1">시각장애인</span>
                                 </div>
                             </div>
 
@@ -100,19 +75,9 @@ const Login = () => {
                                 </div>
                                 <hr className="border-dashed border-gray-200 my-2" />
                                 <ul className="text-gray-500 space-y-1 list-none text-xs">
-                                    {selectedRole === 'user' ? (
-                                        <>
-                                            <li>* 음성 안내 서비스</li>
-                                            <li>* 상품 인식 스캐너</li>
-                                            <li>* 위험 상품 경고 알림</li>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <li>* 보호자 모니터링</li>
-                                            <li>* 설정 및 이력 관리</li>
-                                            <li>* 긴급 호출 수신</li>
-                                        </>
-                                    )}
+                                    <li>* 음성 안내 서비스</li>
+                                    <li>* 상품 인식 스캐너</li>
+                                    <li>* 위험 상품 경고 알림</li>
                                 </ul>
                             </div>
 
