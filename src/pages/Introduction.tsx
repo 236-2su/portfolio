@@ -102,13 +102,17 @@ export default function Introduction() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex flex-col md:flex-row items-center gap-8">
-            {/* Profile Image with Initials */}
+            {/* Profile Image */}
             <motion.div
-              className="w-48 h-48 rounded-full bg-gradient-to-br from-primary-600 to-secondary-600 flex items-center justify-center text-white text-6xl font-bold shadow-xl border-4 border-white"
+              className="w-48 h-48 rounded-full overflow-hidden shadow-xl border-4 border-white"
               whileHover={{ scale: 1.05, rotate: 5 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
-              {profile.initials}
+              <img
+                src="/profile.jpg"
+                alt={profile.name}
+                className="w-full h-full object-cover object-top"
+              />
             </motion.div>
             <div className="flex-1 text-center md:text-left">
               <motion.h1
