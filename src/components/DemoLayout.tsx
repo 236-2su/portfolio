@@ -34,6 +34,7 @@ export default function DemoLayout({ children, title, description }: DemoLayoutP
         >
           {title}
         </motion.h1>
+
         {description && (
           <motion.p
             className="text-gray-600 text-lg"

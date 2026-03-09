@@ -108,7 +108,7 @@ export default function Projects() {
                           whileTap={{ scale: 0.98 }}
                         >
                           <ExternalLink size={16} />
-                          View Demo
+                          View Demo (Mock)
                         </motion.button>
                       </Link>
                     )

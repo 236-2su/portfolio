@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import GlobalDemoBadge from './components/GlobalDemoBadge';
 import Introduction from './pages/Introduction';
 import Projects from './pages/Projects';
 import SsafyFinanceDemo from './pages/demos/ssafy-finance';
@@ -20,6 +21,7 @@ function App() {
     <BrowserRouter>
       <div className="min-h-screen">
         <Navbar />
+        <GlobalDemoBadge />
         <Routes>
           <Route path="/" element={<Introduction />} />
           <Route path="/projects" element={<Projects />} />
