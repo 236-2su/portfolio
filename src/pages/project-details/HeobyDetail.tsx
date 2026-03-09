@@ -47,6 +47,39 @@ export default function HeobyDetail() {
         realtime: ['MQTT (Eclipse Paho)', 'Spring Integration MQTT', 'Firebase Cloud Messaging (FCM)'],
     };
 
+    const renderFeatureCard = (feature: any, index: number, additionalClass: string = '') => (
+        <motion.div
+            key={feature.title}
+            className={`card p-6 flex flex-col ${additionalClass}`}
+            whileHover={{ y: -5 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 + index * 0.1 }}
+        >
+            {feature.gif && (
+                <div className="mb-4 rounded-lg overflow-hidden border border-gray-200 flex-grow flex items-center justify-center bg-gray-50 max-h-[600px]">
+                    <img
+                        src={feature.gif}
+                        alt={feature.title}
+                        className="w-full h-full object-contain"
+                        onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                        }}
+                    />
+                </div>
+            )}
+            <div className="flex items-start gap-4 mt-auto">
+                <div className="bg-primary-100 p-3 rounded-lg flex-shrink-0">
+                    <feature.icon className="text-primary-600" size={24} />
+                </div>
+                <div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+                </div>
+            </div>
+        </motion.div>
+    );
+
     return (
         <div className="min-h-screen pt-24 pb-16 px-6 bg-gray-50">
             <div className="container mx-auto max-w-6xl">
@@ -200,39 +233,25 @@ export default function HeobyDetail() {
                     transition={{ delay: 0.2 }}
                 >
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">주요 기능</h2>
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {features.map((feature, index) => (
-                            <motion.div
-                                key={index}
-                                className="card p-6"
-                                whileHover={{ y: -5 }}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.3 + index * 0.1 }}
-                            >
-                                {feature.gif && (
-                                    <div className="mb-4 rounded-lg overflow-hidden border border-gray-200">
-                                        <img
-                                            src={feature.gif}
-                                            alt={feature.title}
-                                            className="w-full h-auto object-contain"
-                                            onError={(e) => {
-                                                e.currentTarget.style.display = 'none';
-                                            }}
-                                        />
-                                    </div>
-                                )}
-                                <div className="flex items-start gap-4">
-                                    <div className="bg-primary-100 p-3 rounded-lg flex-shrink-0">
-                                        <feature.icon className="text-primary-600" size={24} />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
-                                        <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
+
+                    {/* Top Section: GIF Cards */}
+                    <div className="grid md:grid-cols-2 gap-6 mb-6">
+                        {/* Left: 2 Window capture GIFs */}
+                        <div className="flex flex-col gap-6">
+                            {renderFeatureCard(features[0], 0)}
+                            {renderFeatureCard(features[2], 1)}
+                        </div>
+                        {/* Right: 1 Mobile capture GIF */}
+                        <div className="flex flex-col h-full">
+                            {renderFeatureCard(features[4], 2, "h-full")}
+                        </div>
+                    </div>
+
+                    {/* Bottom Section: Non-GIF Cards */}
+                    <div className="grid md:grid-cols-3 gap-6">
+                        {renderFeatureCard(features[1], 3)}
+                        {renderFeatureCard(features[3], 4)}
+                        {renderFeatureCard(features[5], 5)}
                     </div>
                 </motion.div>
 

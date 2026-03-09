@@ -7,7 +7,7 @@ export default function Introduction() {
     name: '이상욱',
     initials: 'SU',
     title: '한 걸음 더 나아가는 개발자',
-    bio: '3년간의 관세사 시험 준비를 통해 법전을 파고들던 집요한 끈기는 이제 저의 가장 강력한 개발 무기가 되었습니다. 단순히 코드를 짜는 것을 넘어, AI 기술이 사용자에게 닿는 \'서비스\'로 완성될 때까지 끊임없이 고민합니다. 스마트팜 안전 시스템부터 개인화 추천 서비스까지, 마주하는 기술적 난제들을 끝까지 해결해내는 과정에서 엔지니어로서의 가치를 증명해왔습니다. 오늘보다 내일을 나보다 우리를 생각하는 개발자로 성장하고 싶습니다.',
+    bio: '단순히 코드를 짜는 것을 넘어, AI 기술이 사용자에게 닿는 \'서비스\'로 완성될 때까지 끊임없이 고민합니다. 스마트팜 안전 시스템부터 개인화 추천 서비스까지, 마주하는 기술적 난제들을 끝까지 해결해내는 과정에서 엔지니어로서의 가치를 증명해왔습니다. 오늘보다 내일을 나보다 우리를 생각하는 개발자로 성장하고 싶습니다.',
   };
 
   const education = [
@@ -66,14 +66,14 @@ export default function Introduction() {
       title: 'DevOps & Infrastructure',
       icon: Server,
       items: ['Docker', 'Jenkins', 'AWS EC2', 'Nginx', 'GitLab CI'],
-      description: 'Heoby 프로젝트에서 Jenkins와 Docker를 활용해 CI/CD 파이프라인을 구축, 코드 변경 사항의 자동 빌드 및 무중단 배포를 실현했습니다. Linbook 등 다수의 프로젝트를 AWS EC2와 Nginx 환경에서 안정적으로 운영했습니다.',
+      description: 'Heoby, Lookey 프로젝트에서 Jenkins와 Docker를 활용해 CI/CD 파이프라인을 구축했습니다. 그리고 first-step-town과 Linbook에서 github action을 통해 서버에 프로젝트를 배포했습니다. 싸피에서 했던 프로젝트들은 AWS EC2와 Nginx 환경에서 안정적으로 운영했습니다.',
       color: 'bg-green-50 text-green-700',
     },
     {
       title: 'AI Integration',
       icon: BrainCircuit,
       items: ['YOLO', 'MediaPipe', 'MQTT', 'Python', 'OpenCV'],
-      description: 'Heoby와 Lookey 프로젝트에서 YOLO 객체 인식 모델과 MediaPipe를 FastAPI 서버로 서빙하고, MQTT 프로토콜을 통해 추론 결과를 실시간으로 백엔드 및 클라이언트에 전송하는 저지연 AI 서비스를 구현했습니다.',
+      description: 'Heoby와 Lookey 프로젝트에서 YOLO 객체 인식 모델과 MediaPipe에서 나오는 데이터를 FastAPI 서버로 서빙하고, 전해오는 데이터를 바탕으로 svm을 분석해서 자세를 추론하고 전달했습니다.',
       color: 'bg-purple-50 text-purple-700',
     },
     {
@@ -143,35 +143,6 @@ export default function Introduction() {
           </div>
         </motion.div>
 
-        {/* Education Section */}
-        <motion.div
-          className="mb-12"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-        >
-          <h2 className="text-3xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-            <GraduationCap className="text-primary-600" size={36} />
-            Education
-          </h2>
-          <div className="grid gap-6">
-            {education.map((edu, index) => (
-              <motion.div
-                key={index}
-                className="card p-6"
-                whileHover={{ y: -5 }}
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4 + index * 0.1 }}
-              >
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{edu.degree}</h3>
-                <p className="text-lg text-primary-600 mb-2">{edu.major}</p>
-                <p className="text-gray-600">{edu.school}</p>
-                <p className="text-gray-500 text-sm mt-2">{edu.period}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Skills Section (Replaced) */}
         <motion.div
@@ -217,6 +188,38 @@ export default function Introduction() {
             ))}
           </div>
         </motion.div>
+
+
+        {/* Education Section */}
+        <motion.div
+          className="mb-12"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+        >
+          <h2 className="text-3xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+            <GraduationCap className="text-primary-600" size={36} />
+            Education
+          </h2>
+          <div className="grid gap-6">
+            {education.map((edu, index) => (
+              <motion.div
+                key={index}
+                className="card p-6"
+                whileHover={{ y: -5 }}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4 + index * 0.1 }}
+              >
+                <h3 className="text-xl font-bold text-gray-800 mb-2">{edu.degree}</h3>
+                <p className="text-lg text-primary-600 mb-2">{edu.major}</p>
+                <p className="text-gray-600">{edu.school}</p>
+                <p className="text-gray-500 text-sm mt-2">{edu.period}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
 
         {/* Tech Stack Tags Section */}
         <motion.div
