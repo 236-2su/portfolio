@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Lock } from 'lucide-react';
+import { ExternalLink, Lock, Info } from 'lucide-react';
 import { PROJECTS } from '../constants/projects';
 
 export default function Projects() {
@@ -8,13 +8,35 @@ export default function Projects() {
     <div className="min-h-screen pt-24 pb-16 px-6">
       <div className="container mx-auto max-w-6xl">
         <motion.h1
-          className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent pb-2"
+          className="text-5xl font-bold text-center mb-6 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent pb-2"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           My Projects
         </motion.h1>
+
+        {/* Global Demo Notice */}
+        <motion.div
+          className="max-w-3xl mx-auto mb-16 bg-blue-50 border border-blue-200 rounded-xl p-6 text-center shadow-sm"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <Info className="text-blue-600" size={24} />
+            <h2 className="text-xl font-bold text-blue-800">안내: 데모 페이지 구동 방식</h2>
+          </div>
+          <p className="text-blue-700 leading-relaxed text-sm md:text-base">
+            해당 포트폴리오의 모든 <strong>Interactive Demo (Mock Data)</strong>는 <strong>Mock Service Worker (MSW)</strong>를
+            <br className="hidden md:block" />
+            활용하여 프론트엔드 단에서 가상의 데이터를 연동해 구동됩니다.
+            <br className="hidden md:block" />
+            <span className="text-blue-800 font-semibold mt-2 inline-block">
+              ⚠️ 주의사항: WebRTC(화상 통화), MQTT(실시간 알림), 백엔드 AI 추론 등 라이브 서버 연동이 필수적인 핵심 기능들은 데모 환경에서 제한적으로 동작하거나 UI 흐름만 확인하실 수 있습니다.
+            </span>
+          </p>
+        </motion.div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
